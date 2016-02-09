@@ -152,12 +152,12 @@ class BattleshipTest < Minitest::Test
 
 #   # Remember, for a moment, just solve this one in the simplest way possible. As
 #   # far as this test is concerned, what does `has_ship_on?` always return?
-#   def test_16_empty_grid
-#     grid = Grid.new
-#     refute grid.has_ship_on?(1, 1)
-#     refute grid.has_ship_on?(10, 7)
-#   end
-#
+  def test_16_empty_grid
+    grid = Grid.new
+    refute grid.has_ship_on?(1, 1)
+    refute grid.has_ship_on?(10, 7)
+  end
+
 #   def test_17_empty_grid_can_display_itself
 #     grid = Grid.new
 #     assert_output(empty_grid) do
