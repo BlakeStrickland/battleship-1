@@ -4,6 +4,7 @@ class Ship
   def initialize(length)
     @length = length
     @ship = []
+    @shots_fired = []
   end
 
   def place(x, y, across)
@@ -34,4 +35,15 @@ class Ship
     end
     return false
   end
+
+  def fire_at(x,y)
+    if @ship.include?([x,y]) && !@shots_fired.include?([x,y])
+      @shots_fired << [x,y]
+    end
+  end
+
+
+
+
+
 end
