@@ -193,30 +193,30 @@ J |   |   |   |   |   |   |   |   |   |   |
     refute grid.has_ship_on?(5, 4)
   end
 #
-#   # Don't forget on this next one that giving the ship coordinates and placing
-#   # it on the grid are two separate steps.  You can do the first before knowing
-#   # whether it's possible to do the second.
-#   def test_19_cant_place_overlapping_ships
-#     grid = Grid.new
-#     assert grid.place_ship(Ship.new(4), 3, 3, true)
-#     refute grid.place_ship(Ship.new(4), 1, 3, true)
-#     refute grid.place_ship(Ship.new(4), 4, 3, true)
-#     refute grid.place_ship(Ship.new(4), 4, 2, false)
-#     assert grid.place_ship(Ship.new(4), 7, 7, true)
-#   end
-#
-#   def test_20_ready_grid_can_display_itself
-#     grid = Grid.new
-#     assert grid.place_ship(Ship.new(2), 3, 6, true)
-#     assert grid.place_ship(Ship.new(3), 7, 4, true)
-#     assert grid.place_ship(Ship.new(3), 4, 8, true)
-#     assert grid.place_ship(Ship.new(4), 1, 1, true)
-#     assert grid.place_ship(Ship.new(5), 6, 2, false)
-#     assert_output(ready_grid) do
-#       grid.display
-#     end
-#   end
-#
+  # Don't forget on this next one that giving the ship coordinates and placing
+  # it on the grid are two separate steps.  You can do the first before knowing
+  # whether it's possible to do the second.
+  def test_19_cant_place_overlapping_ships
+    grid = Grid.new
+    assert grid.place_ship(Ship.new(4), 3, 3, true)
+    refute grid.place_ship(Ship.new(4), 1, 3, true)
+    refute grid.place_ship(Ship.new(4), 4, 3, true)
+    refute grid.place_ship(Ship.new(4), 4, 2, false)
+    assert grid.place_ship(Ship.new(4), 7, 7, true)
+  end
+
+  def test_20_ready_grid_can_display_itself
+    grid = Grid.new
+    assert grid.place_ship(Ship.new(2), 3, 6, true)
+    assert grid.place_ship(Ship.new(3), 7, 4, true)
+    assert grid.place_ship(Ship.new(3), 4, 8, true)
+    assert grid.place_ship(Ship.new(4), 1, 1, true)
+    assert grid.place_ship(Ship.new(5), 6, 2, false)
+    assert_output(ready_grid) do
+      grid.display
+    end
+  end
+
 #   def ready_grid
 #     %Q{    1   2   3   4   5   6   7   8   9   10
 #   -----------------------------------------

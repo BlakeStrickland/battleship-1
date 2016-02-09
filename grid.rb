@@ -1,11 +1,16 @@
 require './ship.rb'
-class Grid < Ship
+class Grid
   def initialize
     @ships = []
   end
 
   def place_ship(ship_object, x, y, across)
-    ship_object.place(x, y, across)
+    ship_object.place(x,y,across)
+    @ships.each do |s|
+      if ship_object.overlaps_with?(s)
+        return false
+      end
+    end
     @ships << ship_object
   end
 
