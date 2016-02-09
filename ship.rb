@@ -1,4 +1,5 @@
 require 'byebug'
+require './position.rb'
 class Ship
   attr_reader :length, :ship
   def initialize(length)
@@ -13,10 +14,13 @@ class Ship
         (x...x+@length).each do |place|
           @ship << [place, y]
         end
+        
+        ship = Position.new(@ship)
       else
         (y...y+@length).each do |place|
           @ship << [x, place]
         end
+        ship = Position.new(@ship)
       end
     end
   end

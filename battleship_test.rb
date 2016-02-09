@@ -7,7 +7,7 @@ require './player.rb'
 require './human_player.rb'
 require './computer_player.rb'
 require './ship.rb'
-
+require './position.rb'
 
 $mock_inputs = []
 def get_user_input
@@ -127,16 +127,16 @@ class BattleshipTest < Minitest::Test
     ship.fire_at(3, 1)
     assert ship.sunk?
   end
-#
-#   # Around here, you're going to get frustrated if you have been keeping an
-#   # array of positions like [[1, 1], [2, 1], [3,1]].  Consider making this an
-#   # array of Position objects instead.  Then you can add other fields besides x
-#   # and y.  For instance, you can write a method `hit?` on Position.
-#
-#   def test_14_unplaced_ship_is_not_sunk
-#     ship = Ship.new(2)
-#     refute ship.sunk?
-#   end
+
+  # Around here, you're going to get frustrated if you have been keeping an
+  # array of positions like [[1, 1], [2, 1], [3,1]].  Consider making this an
+  # array of Position objects instead.  Then you can add other fields besides x
+  # and y.  For instance, you can write a method `hit?` on Position.
+
+  def test_14_unplaced_ship_is_not_sunk
+    ship = Ship.new(2)
+    refute ship.sunk?
+  end
 #
 #   # One last note before we move onto the grid.  The best solution to the above
 #   # tests would be to use `covers?` inside `fire_at`.  For this to be really
