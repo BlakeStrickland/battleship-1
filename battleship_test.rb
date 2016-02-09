@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-
+require 'byebug'
 #Note: This line is going to fail first.
 require './battleship.rb'
 require './player.rb'
@@ -92,20 +92,20 @@ class BattleshipTest < Minitest::Test
     refute ship.place(3, 2, true)
   end
 
-#   def test_11_ships_know_if_they_overlap
-#     ship1 = Ship.new(4)
-#     ship1.place(2, 1, true)
-#     ship2 = Ship.new(4)
-#     ship2.place(3, 1, true)
-#     ship3 = Ship.new(4)
-#     ship3.place(2, 1, false)
-#
-#     # Try to use your `covers?` method inside your `overlaps_with?` code.
-#     assert ship1.overlaps_with?(ship2)
-#     assert ship1.overlaps_with?(ship3)
-#     refute ship2.overlaps_with?(ship3)
-#   end
-#
+  def test_11_ships_know_if_they_overlap
+    ship1 = Ship.new(4)
+    ship1.place(2, 1, true)
+    ship2 = Ship.new(4)
+    ship2.place(3, 1, true)
+    ship3 = Ship.new(4)
+    ship3.place(2, 1, false)
+
+    # Try to use your `covers?` method inside your `overlaps_with?` code.
+    assert ship1.overlaps_with?(ship2)
+    assert ship1.overlaps_with?(ship3)
+    refute ship2.overlaps_with?(ship3)
+  end
+
 #   def test_12_ships_can_be_fired_at
 #     ship = Ship.new(4)
 #     ship.place(2, 1, true)
