@@ -14,7 +14,7 @@ class Ship
         (x...x+@length).each do |place|
           @ship << [place, y]
         end
-        
+
         ship = Position.new(@ship)
       else
         (y...y+@length).each do |place|
@@ -47,7 +47,7 @@ class Ship
   end
 
   def sunk?
-    if @ship == @shots_fired
+    if @ship == @shots_fired && !@ship.empty?
       return true
     end
   end

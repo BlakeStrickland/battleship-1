@@ -145,10 +145,10 @@ class BattleshipTest < Minitest::Test
 #   # that was being fired on.  Then you can immediately mark it as hit without
 #   # searching for it again.
 #
-#   def test_15_grid_class_exists
-#     assert Grid
-#   end
-#
+  def test_15_grid_class_exists
+    assert Grid
+  end
+
 #   # Remember, for a moment, just solve this one in the simplest way possible. As
 #   # far as this test is concerned, what does `has_ship_on?` always return?
 #   def test_16_empty_grid
