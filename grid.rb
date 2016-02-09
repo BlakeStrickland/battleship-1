@@ -1,9 +1,18 @@
-class Grid
+require './ship.rb'
+class Grid < Ship
   def initialize
+    @ships = []
+  end
 
+  def place_ship(ship_object, x, y, across)
+    ship_object.place(x, y, across)
+    @ships << ship_object
   end
 
   def has_ship_on?(x,y)
+    @ships.each do |s|
+      return true if s.covers?(x,y)
+    end
     false
   end
 
