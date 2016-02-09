@@ -42,7 +42,11 @@ class Ship
     end
   end
 
-
+  def sunk?
+    if @ship == @shots_fired
+      return true
+    end
+  end
 
 
 

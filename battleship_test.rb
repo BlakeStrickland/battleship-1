@@ -114,19 +114,19 @@ class BattleshipTest < Minitest::Test
     refute ship.fire_at(1, 1)
     refute ship.fire_at(2, 1)
   end
-#
-#   def test_13_ships_can_be_sunk
-#     ship = Ship.new(2)
-#     ship.place(2, 1, true)
-#
-#     refute ship.sunk?
-#     ship.fire_at(2, 1)
-#     refute ship.sunk?
-#     ship.fire_at(3, 1)
-#     assert ship.sunk?
-#     ship.fire_at(3, 1)
-#     assert ship.sunk?
-#   end
+
+  def test_13_ships_can_be_sunk
+    ship = Ship.new(2)
+    ship.place(2, 1, true)
+
+    refute ship.sunk?
+    ship.fire_at(2, 1)
+    refute ship.sunk?
+    ship.fire_at(3, 1)
+    assert ship.sunk?
+    ship.fire_at(3, 1)
+    assert ship.sunk?
+  end
 #
 #   # Around here, you're going to get frustrated if you have been keeping an
 #   # array of positions like [[1, 1], [2, 1], [3,1]].  Consider making this an
