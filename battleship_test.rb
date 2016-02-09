@@ -158,29 +158,29 @@ class BattleshipTest < Minitest::Test
     refute grid.has_ship_on?(10, 7)
   end
 
-#   def test_17_empty_grid_can_display_itself
-#     grid = Grid.new
-#     assert_output(empty_grid) do
-#       grid.display
-#     end
-#   end
-#
-#   def empty_grid
-#     %Q{    1   2   3   4   5   6   7   8   9   10
-#   -----------------------------------------
-# A |   |   |   |   |   |   |   |   |   |   |
-# B |   |   |   |   |   |   |   |   |   |   |
-# C |   |   |   |   |   |   |   |   |   |   |
-# D |   |   |   |   |   |   |   |   |   |   |
-# E |   |   |   |   |   |   |   |   |   |   |
-# F |   |   |   |   |   |   |   |   |   |   |
-# G |   |   |   |   |   |   |   |   |   |   |
-# H |   |   |   |   |   |   |   |   |   |   |
-# I |   |   |   |   |   |   |   |   |   |   |
-# J |   |   |   |   |   |   |   |   |   |   |
-#   -----------------------------------------
-# }
-#   end
+  def test_17_empty_grid_can_display_itself
+    grid = Grid.new
+    assert_output(empty_grid) do
+      grid.display
+    end
+  end
+
+  def empty_grid
+    %Q{    1   2   3   4   5   6   7   8   9   10
+  -----------------------------------------
+A |   |   |   |   |   |   |   |   |   |   |
+B |   |   |   |   |   |   |   |   |   |   |
+C |   |   |   |   |   |   |   |   |   |   |
+D |   |   |   |   |   |   |   |   |   |   |
+E |   |   |   |   |   |   |   |   |   |   |
+F |   |   |   |   |   |   |   |   |   |   |
+G |   |   |   |   |   |   |   |   |   |   |
+H |   |   |   |   |   |   |   |   |   |   |
+I |   |   |   |   |   |   |   |   |   |   |
+J |   |   |   |   |   |   |   |   |   |   |
+  -----------------------------------------
+}
+  end
 #
 #   def test_18_place_ship
 #     grid = Grid.new
