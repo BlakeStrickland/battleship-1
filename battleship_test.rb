@@ -217,29 +217,29 @@ J |   |   |   |   |   |   |   |   |   |   |
     end
   end
 
-#   def ready_grid
-#     %Q{    1   2   3   4   5   6   7   8   9   10
-#   -----------------------------------------
-# A | O | O | O | O |   |   |   |   |   |   |
-# B |   |   |   |   |   | O |   |   |   |   |
-# C |   |   |   |   |   | O |   |   |   |   |
-# D |   |   |   |   |   | O | O | O | O |   |
-# E |   |   |   |   |   | O |   |   |   |   |
-# F |   |   | O | O |   | O |   |   |   |   |
-# G |   |   |   |   |   |   |   |   |   |   |
-# H |   |   |   | O | O | O |   |   |   |   |
-# I |   |   |   |   |   |   |   |   |   |   |
-# J |   |   |   |   |   |   |   |   |   |   |
-#   -----------------------------------------
-# }
-#   end
-#
-#   def test_21_misses_on_empty_grid
-#     grid = Grid.new
-#     refute grid.fire_at(1, 1)
-#     refute grid.fire_at(10, 7)
-#   end
-#
+  def ready_grid
+    %Q{    1   2   3   4   5   6   7   8   9   10
+  -----------------------------------------
+A | O | O | O | O |   |   |   |   |   |   |
+B |   |   |   |   |   | O |   |   |   |   |
+C |   |   |   |   |   | O |   |   |   |   |
+D |   |   |   |   |   | O | O | O | O |   |
+E |   |   |   |   |   | O |   |   |   |   |
+F |   |   | O | O |   | O |   |   |   |   |
+G |   |   |   |   |   |   |   |   |   |   |
+H |   |   |   | O | O | O |   |   |   |   |
+I |   |   |   |   |   |   |   |   |   |   |
+J |   |   |   |   |   |   |   |   |   |   |
+  -----------------------------------------
+}
+  end
+
+  def test_21_misses_on_empty_grid
+    grid = Grid.new
+    refute grid.fire_at(1, 1)
+    refute grid.fire_at(10, 7)
+  end
+
 #   def test_22_misses_outside_grid
 #     grid = Grid.new
 #     refute grid.fire_at(18, 1)

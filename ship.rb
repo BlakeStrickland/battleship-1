@@ -43,7 +43,9 @@ class Ship
   def fire_at(x,y)
     if @ship.include?([x,y]) && !@shots_fired.include?([x,y])
       @shots_fired << [x,y]
+      return true
     end
+    false
   end
 
   def sunk?
