@@ -27,7 +27,6 @@ class Grid
     return false if has_ship_on?(x, y)
   end
 
-
   def display
     letters = ["A","B","C","D","E","F","G","H","I","J"]
     puts "    1   2   3   4   5   6   7   8   9   10"

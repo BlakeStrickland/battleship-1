@@ -240,18 +240,19 @@ J |   |   |   |   |   |   |   |   |   |   |
     refute grid.fire_at(10, 7)
   end
 
- #   def test_22_misses_outside_grid
-#     grid = Grid.new
-#     refute grid.fire_at(18, 1)
-#     refute grid.fire_at(10, 26)
-#   end
-#
-#   def test_23_hits_on_grid
-#     grid = Grid.new
-#     grid.place_ship(Ship.new(4), 3, 3, true)
-#     refute grid.fire_at(1, 1)
-#     assert grid.fire_at(3, 3)
-#   end
+   def test_22_misses_outside_grid
+    grid = Grid.new
+    refute grid.fire_at(18, 1)
+    refute grid.fire_at(10, 26)
+  end
+
+  def test_23_hits_on_grid
+    grid = Grid.new
+    grid.place_ship(Ship.new(4), 3, 3, true)
+    
+    refute grid.fire_at(1, 1)
+    assert grid.fire_at(3, 3)
+  end
 #
 #   # Depending on how you implemented prior steps, this next one might
 #   # be a big refactor.  You might have to change grid.fire_at, ship.fire_at,
