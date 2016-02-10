@@ -110,7 +110,6 @@ class BattleshipTest < Minitest::Test
   def test_12_ships_can_be_fired_at
     ship = Ship.new(4)
     ship.place(2, 1, true)
-
     assert ship.fire_at(2, 1)
     refute ship.fire_at(1, 1)
     refute ship.fire_at(2, 1)
@@ -184,6 +183,7 @@ J |   |   |   |   |   |   |   |   |   |   |
 
   def test_18_place_ship
     grid = Grid.new
+
     assert grid.place_ship(Ship.new(4), 3, 3, true)
     refute grid.has_ship_on?(2, 3)
     assert grid.has_ship_on?(3, 3)
@@ -240,7 +240,7 @@ J |   |   |   |   |   |   |   |   |   |   |
     refute grid.fire_at(10, 7)
   end
 
-#   def test_22_misses_outside_grid
+ #   def test_22_misses_outside_grid
 #     grid = Grid.new
 #     refute grid.fire_at(18, 1)
 #     refute grid.fire_at(10, 26)

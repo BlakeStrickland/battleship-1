@@ -5,55 +5,41 @@ class Ship
   def initialize(length)
     @length = length
     @ship = []
-    @shots_fired = []
   end
 
   def place(x, y, across)
-    if @ship.empty?
-      if across
-        (x...x+@length).each do |place|
-          @ship << [place, y]
-        end
-
-        ship = Position.new(@ship)
-      else
-        (y...y+@length).each do |place|
-          @ship << [x, place]
-        end
-        ship = Position.new(@ship)
-      end
+    return false if @ship != []
+    length.times do |i|
+      @ship << (across ? Position.new(x+i, y) :  Position.new(x, y+i))
     end
   end
 
   def covers?(x, y)
-    if @ship.include?([x,y])
-      true
-    else
-      false
+    if @ship.each do |i|
+      return i if i.x == x && i.y == y
+      end
+    false
     end
   end
 
   def overlaps_with?(another_ship)
-    @ship.each do |coords|
-      return true if another_ship.covers?(coords[0],coords[1])
+    found = false
+    @ship.each do |i|
+      found = true if another_ship.covers?(i.x, i.y)
     end
-    return false
+    found
   end
 
   def fire_at(x,y)
-    if @ship.include?([x,y]) && !@shots_fired.include?([x,y])
-      @shots_fired << [x,y]
-      return true
-    end
-    false
+    position = covers?(x, y)
+    position && position.hit!
   end
 
   def sunk?
-    if @ship == @shots_fired && !@ship.empty?
-      return true
+    return false if @ship.empty?
+    @ship.each do |i|
+      return false if !i.hit?
     end
+    return true
   end
-
-
-
 end

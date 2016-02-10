@@ -1,9 +1,20 @@
 class Position
-  def initialize(ship)
-    @ship_coords = ship
+  attr_reader :x, :y
+  def initialize(x,y)
+    @x = x
+    @y = y
+    @hit = false
   end
 
   def hit?
-    @shots_fired
+    @hit
+  end
+
+  def hit!
+    if @hit
+      return false
+    else
+      @hit = true
+    end
   end
 end

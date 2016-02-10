@@ -6,9 +6,9 @@ class Grid
   end
 
   def place_ship(ship_object, x, y, across)
-    ship_object.place(x,y,across)
-    @ships.each do |s|
-      if ship_object.overlaps_with?(s)
+    ship_object.place(x, y, across)
+    @ships.each do |i|
+      if i.overlaps_with?(ship_object)
         return false
       end
     end
@@ -16,11 +16,17 @@ class Grid
   end
 
   def has_ship_on?(x,y)
+    found = false
     @ships.each do |s|
-      return true if s.covers?(x,y)
+      found = true if s.covers?(x,y)
     end
-    false
+    found
   end
+
+  def fire_at(x,y)
+    return false if has_ship_on?(x, y)
+  end
+
 
   def display
     letters = ["A","B","C","D","E","F","G","H","I","J"]
